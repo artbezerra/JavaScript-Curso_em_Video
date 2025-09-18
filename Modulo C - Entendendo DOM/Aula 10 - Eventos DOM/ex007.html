@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 10 - Ex 007</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+        input, button{
+            font-size: 1.2em;
+            padding: 10px;
+            margin: 10px;
+        }
+        #res{
+            margin-top: 20px;
+            font-size: 1.4em;
+            color: #333;
+        }
+    </style>
+
+</head>
+<body>
+    <input type="number" name="txtn1" id="txtn1">
+    <input type="number" name="txtn2" id="txtn2">
+
+    <br>
+
+    <button onclick="limpar()">Limpar</button>
+
+    <br>
+
+    <button onclick="somar()">Somar</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+
+    <div id="res">O resultado deve aparecer aqui</div>
+    
+    <script>
+        var n1 = document.getElementById('txtn1')
+        var n2 = document.getElementById('txtn2')
+        var res = document.getElementById('res')
+
+        function somar(){
+            var num1 = Number(n1.value)
+            var num2 = Number(n2.value)
+            var s = num1 + num2
+            res.innerHTML = `A soma entre ${num1} e ${num2} é igual a <strong> ${s} </strong>`
+        }
+
+        function limpar(){
+            n1.value = ''
+            n2.value = ''
+            res.innerHTML = 'O resultado deve aparecer aqui'
+            n1.focus()
+        }
+        
+        function subtrair(){
+            var num1 = Number(n1.value)
+            var num2 = Number(n2.value)
+            var s = num1 - num2
+            res.innerHTML = `A subtração entre ${num1} e ${num2} é igual a <strong> ${s} </strong>`
+        }
+
+        function multiplicar(){
+            var num1 = Number(n1.value)
+            var num2 = Number(n2.value)
+            var s = num1 * num2
+            res.innerHTML = `A multiplicação entre ${num1} e ${num2} é igual a <strong> ${s} </strong>`
+        }
+
+        function dividir(){
+            var num1 = Number(n1.value)
+            var num2 = Number(n2.value)
+            var s = num1 / num2
+            res.innerHTML = `A divisão entre ${num1} e ${num2} é igual a <strong> ${s} </strong>`
+        }
+    </script>
+</body>
+</html>

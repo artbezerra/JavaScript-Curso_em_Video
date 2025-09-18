@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 10</title>
+
+    <style>
+        #area{
+            width: 300px;
+            height: 100px;
+            background: lightblue;
+            text-align: center;
+            line-height: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+       Passe o mouse aqui...
+    </div>
+    
+    <script>
+        var a = document.getElementById('area')
+
+        a.addEventListener('mouseover', entrar)
+        a.addEventListener('mouseout', sair)
+        a.addEventListener('click', clicar)
+
+        function entrar(){
+            a.innerText = "mouse entrou"
+            a.style.background = 'lightgreen'
+        }
+
+        function sair(){
+            a.innerText = "mouse saiu"
+            a.style.background = 'lightblue'
+        }
+
+        function clicar(){
+            a.innerText = "mouse clicou"
+            a.style.background = 'lightcoral'
+        }
+    </script>
+</body>
+</html>
