@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9 - Aula 10</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+<body> 
+    <h1>Sistema de Multas</h1>
+
+    <div>
+        <p>Velocidade do Carro: <span id="velocidade">0</span> Km/h</p>
+        <p id="situacao">Situação: <span style="font-weight: bold;">Nenhuma</span></p>
+        <input type="number" name="txtvel" id="txtvel" value="0" />
+        <input type="button" value="Acelerar" onclick="acelerar()" />
+        <input type="button" value="Frear" onclick="frear()" />
+    </div>
+
+    <script>
+        function acelerar(){
+            var velocidade = document.getElementById('velocidade')
+            var situacao = document.getElementById('situacao')
+            var txtvel = document.getElementById('txtvel')
+            velocidade.innerText = parseInt(velocidade.innerText) + parseInt(txtvel.value)
+            if(txtvel.value >= 0){
+                if(velocidade.innerText > 60){
+                    situacao.innerHTML = 'Situação: <span style="font-weight: bold; color: red;">Multado</span>'
+                }else{
+                    situacao.innerHTML = 'Situação: <span style="font-weight: bold; color: green;">Dentro do Limite</span>'
+                }
+            }
+            else{
+                alert('Digite um valor positivo para acelerar!')
+            }
+        }
+
+        function frear(){
+            var velocidade = document.getElementById('velocidade')
+            var situacao = document.getElementById('situacao')
+            var txtvel = document.getElementById('txtvel')
+            velocidade.innerText = parseInt(velocidade.innerText) - parseInt(txtvel.value)
+            if(txtvel.value >= 0){
+                if(velocidade.innerText < 0){
+                    velocidade.innerText = 0
+                }
+                if(velocidade.innerText > 60){
+                    situacao.innerHTML = 'Situação: <span style="font-weight: bold; color: red;">Multado</span>'
+                }
+                else{
+                    situacao.innerHTML = 'Situação: <span style="font-weight: bold; color: green;">Dentro do Limite</span>'
+                }
+            }
+            else{
+                alert('Digite um valor positivo para frear!')
+            }
+        }
+        
+        function verificarVelocidade(){
+            var velocidade = document.getElementById('velocidade')
+            var situacao = document.getElementById('situacao')
+            if(velocidade.innerText > 400){
+                alert('Que carro é esse que passa de 400Km/h?')
+            }
+        }
+
+        setInterval(verificarVelocidade, 10000)
+    </script>
+
+</body>
+</html>
