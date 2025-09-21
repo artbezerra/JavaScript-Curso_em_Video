@@ -1,12 +1,16 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
     background: lightblue;
+    font: normal 14pt Arial;
 }
 
 header {
     color: white;
     padding: 10px;
     text-align: center;
+}
+
+h1 {
+    font-size: 30pt;
 }
 
 section {
@@ -22,4 +26,9 @@ footer {
     text-align: center;
     color: white;
     font-style: italic;
+}
+
+div {
+    text-align: center;
+    padding: 8px;
 }
