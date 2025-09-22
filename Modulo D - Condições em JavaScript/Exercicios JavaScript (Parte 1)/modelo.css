@@ -23,3 +23,8 @@ footer {
     color: white;
     font-style: italic;
 }
+
+p {
+    font-size: 20px;
+    padding: 10px;
+}
