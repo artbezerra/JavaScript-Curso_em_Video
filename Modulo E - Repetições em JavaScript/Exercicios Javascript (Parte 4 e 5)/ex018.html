@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 14 Exercicios - Parte 4 e 5</title>
+    <title>Aula 14 Exercicios - Contador de Passos</title>
     <script src="ex018.js"></script>
     <link rel="stylesheet" href="ex018.css">
 </head>
 <body>
     <header>
-        <h1>Titulo</h1>
+        <h1>Contador de Números por Passo</h1>
     </header>
     <section>
         <div>
-
+            <text>Início:</text> <input type="number" name="" id="inicio">
         </div>
         <div>
-
+            <text>Fim:</text> <input type="number" name="" id="fim">
+        </div>
+        <div>
+            <text>Passo:</text> <input type="number" name="" id="passo">
+        </div>
+        <div>
+            <button onclick="contar()">Contar</button>
+        </div>
+        <div>
+            <p id="res">Resultado deve aparecer aqui...</p>
         </div>
     </section>
     <footer>
